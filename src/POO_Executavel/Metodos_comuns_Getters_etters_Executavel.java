@@ -1,5 +1,7 @@
 package POO_Executavel;
 
+import javax.swing.JOptionPane;
+
 import POO_Classes.Declaração_tipos_publica_privada;
 import POO_Classes.Metodos_comuns_Getters_etters;
 
@@ -8,20 +10,37 @@ public class Metodos_comuns_Getters_etters_Executavel {
 	public static void main(String[] args) {
 		/*Instancia ou criação de objecto*/
 		/*aluo1 é referência para o objeto Aluno*/
+		
+		String nome = JOptionPane.showInputDialog("Qual o nome do aluno? ");
+		String idade = JOptionPane.showInputDialog("Qual é a idade do aluno? ");
+		String dataNascimento = JOptionPane.showInputDialog("Qual é a data de nasciento do aluno? ");
+		String rg = JOptionPane.showInputDialog("Qual é o registro geral do aluno? ");
+		String cpf = JOptionPane.showInputDialog("Qual é o CPF do aluno? ");
+		String mae = JOptionPane.showInputDialog("Qual é o nome da mãe do aluno? ");
+		String pai = JOptionPane.showInputDialog("Qual é o nome da pai do aluno? ");
+		String matricula = JOptionPane.showInputDialog("Qual é a data da matricula do aluno? ");
+		String serie = JOptionPane.showInputDialog("Qual é a serie do aluno? ");
+		String escola = JOptionPane.showInputDialog("Qual é a escola do aluno? ");
+		String setNota1 = JOptionPane.showInputDialog("Qual é a nota1 do aluno? ");
+		String setNota2 = JOptionPane.showInputDialog("Qual é a nota2 do aluno? ");
+		String setNota3 = JOptionPane.showInputDialog("Qual é a nota3 do aluno? ");
+		String setNota4 = JOptionPane.showInputDialog("Qual é a nota4 do aluno? ");
+		
+		
 		Metodos_comuns_Getters_etters aluno1 = new Metodos_comuns_Getters_etters(); /*Aqui será o joão*/
-		aluno1.setNome("João da Silva");
-		aluno1.setIdade(50);
-		aluno1.setDataNascimento("25/09/1993");
-		aluno1.setRegistroGeral("333.444.555");
-		aluno1.setNumeroCpf("222.235.458.20");
-		aluno1.setNomeMae(" Paula Duarte");
-		aluno1.setNomePai("Moises Chimuco");
-		aluno1.setDataMatricula("27/01/2022");
-		aluno1.setNomeEscola("Toronto University");
-		aluno1.setNota1(90);
-		aluno1.setNota2(80.8);
-		aluno1.setNota3(70.9);
-		aluno1.setNota4(90.7);
+		aluno1.setNome(nome);
+		aluno1.setIdade(Integer.valueOf(idade)); //converter String para int
+		aluno1.setDataNascimento(dataNascimento);
+		aluno1.setRegistroGeral(rg);
+		aluno1.setNumeroCpf(cpf);
+		aluno1.setNomeMae(mae);
+		aluno1.setNomePai(pai);
+		aluno1.setDataMatricula(matricula);
+		aluno1.setNomeEscola(escola);
+		aluno1.setNota1(Integer.valueOf(setNota1));
+		aluno1.setNota1(Integer.valueOf(setNota2));
+		aluno1.setNota1(Integer.valueOf(setNota3));
+		aluno1.setNota1(Integer.valueOf(setNota4));
 		
 		
 		System.out.println("Nome é = " + aluno1.getNome());		
