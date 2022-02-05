@@ -49,18 +49,7 @@ public class Studente_Exec {
 		aluno1.setDataMatricula(matricula);
 		aluno1.setSerieMatriculado(serie);
 		aluno1.setNomeEscola(escola);		
-		
-		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1));	//resgatar o objeto e setar o atributo 
-		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));	
-		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));	
-		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));	
-		
-		aluno1.getDisciplina().setDisciplina1(disciplina1);			
-		aluno1.getDisciplina().setDisciplina2(disciplina2);	
-		aluno1.getDisciplina().setDisciplina3(disciplina3);			
-		aluno1.getDisciplina().setDisciplina4(disciplina4);	
-		
-		
+				
 		
 		/*Imprmir dados na console*/
 		System.out.println(aluno1);
