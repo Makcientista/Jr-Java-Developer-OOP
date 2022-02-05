@@ -3,31 +3,42 @@ package POO_Executavel;
 import javax.swing.JOptionPane;
 
 import POO_Classes.Declaração_tipos_publica_privada;
-import POO_Classes.Metodos_comuns_Getters_etters;
+import POO_Classes.Student;
 
-public class Metodos_comuns_Getters_etters_Executavel {
+public class Studente_Exec {
 
 	public static void main(String[] args) {
 		/*Instancia ou criação de objecto*/
 		/*aluo1 é referência para o objeto Aluno*/
 		
+		/*Entrada na console*/
 		String nome = JOptionPane.showInputDialog("Qual o nome do aluno? ");
 		String idade = JOptionPane.showInputDialog("Qual é a idade do aluno? ");
 		String dataNascimento = JOptionPane.showInputDialog("Qual é a data de nasciento do aluno? ");
 		String rg = JOptionPane.showInputDialog("Qual é o registro geral do aluno? ");
 		String cpf = JOptionPane.showInputDialog("Qual é o CPF do aluno? ");
 		String mae = JOptionPane.showInputDialog("Qual é o nome da mãe do aluno? ");
-		String pai = JOptionPane.showInputDialog("Qual é o nome da pai do aluno? ");
+		String pai = JOptionPane.showInputDialog("Qual é o nome do pai do aluno? ");
 		String matricula = JOptionPane.showInputDialog("Qual é a data da matricula do aluno? ");
 		String serie = JOptionPane.showInputDialog("Qual é a serie do aluno? ");
 		String escola = JOptionPane.showInputDialog("Qual é a escola do aluno? ");
-		String setNota1 = JOptionPane.showInputDialog("Qual é a nota1 do aluno? ");
-		String setNota2 = JOptionPane.showInputDialog("Qual é a nota2 do aluno? ");
-		String setNota3 = JOptionPane.showInputDialog("Qual é a nota3 do aluno? ");
-		String setNota4 = JOptionPane.showInputDialog("Qual é a nota4 do aluno? ");
+		
+		String disciplina1 = JOptionPane.showInputDialog("Qual a Disciplina 1");
+		String nota1 = JOptionPane.showInputDialog("Qual é a nota1 do aluno? ");
+		
+		String disciplina2 = JOptionPane.showInputDialog("Qual a Disciplina 2");
+		String nota2 = JOptionPane.showInputDialog("Qual é a nota2 do aluno? ");
+		
+		String disciplina3 = JOptionPane.showInputDialog("Qual a Disciplina 3");		
+		String nota3 = JOptionPane.showInputDialog("Qual é a nota3 do aluno? ");
+		
+		String disciplina4 = JOptionPane.showInputDialog("Qual a Disciplina 4");
+		String nota4 = JOptionPane.showInputDialog("Qual é a nota4 do aluno? ");
+	
 		
 		
-		Metodos_comuns_Getters_etters aluno1 = new Metodos_comuns_Getters_etters(); /*Aqui será o joão*/
+		Student aluno1 = new Student(); /*Aqui será o joão*/
+		/*Passar os dados*/
 		aluno1.setNome(nome);
 		aluno1.setIdade(Integer.valueOf(idade)); //converter String para int
 		aluno1.setDataNascimento(dataNascimento);
@@ -36,11 +47,27 @@ public class Metodos_comuns_Getters_etters_Executavel {
 		aluno1.setNomeMae(mae);
 		aluno1.setNomePai(pai);
 		aluno1.setDataMatricula(matricula);
-		aluno1.setNomeEscola(escola);
-		aluno1.setNota1(Integer.valueOf(setNota1));
-		aluno1.setNota1(Integer.valueOf(setNota2));
-		aluno1.setNota1(Integer.valueOf(setNota3));
-		aluno1.setNota1(Integer.valueOf(setNota4));
+		aluno1.setSerieMatriculado(serie);
+		aluno1.setNomeEscola(escola);		
+		
+		aluno1.getDisciplina().setNota1(Double.parseDouble(nota1));	//resgatar o objeto e setar o atributo 
+		aluno1.getDisciplina().setNota2(Double.parseDouble(nota2));	
+		aluno1.getDisciplina().setNota3(Double.parseDouble(nota3));	
+		aluno1.getDisciplina().setNota4(Double.parseDouble(nota4));	
+		
+		aluno1.getDisciplina().setDisciplina1(disciplina1);			
+		aluno1.getDisciplina().setDisciplina2(disciplina2);	
+		aluno1.getDisciplina().setDisciplina3(disciplina3);			
+		aluno1.getDisciplina().setDisciplina4(disciplina4);	
+		
+		
+		
+		/*Imprmir dados na console*/
+		System.out.println(aluno1);
+		System.out.println("Média do aluno = " + aluno1.getMediaNota());
+		System.out.println("Resultado do aluno = " + aluno1.getAlunoAprovado2());
+		
+		System.out.println("\n /***************+++++++++++****************/++++++++++++********/ \n");
 		
 		
 		System.out.println("Nome é = " + aluno1.getNome());		
@@ -59,14 +86,16 @@ public class Metodos_comuns_Getters_etters_Executavel {
 		
 		
 		
+		
+		
 		/*Agora temos um objecto real na memoria*/
-		Metodos_comuns_Getters_etters aluno2 = new Metodos_comuns_Getters_etters(); //Classe variavel_de_instancia(que faz referencia ao objecto do tipo da Classe) = new Objecto do tipo da Classe 
+		Student aluno2 = new Student(); //Classe variavel_de_instancia(que faz referencia ao objecto do tipo da Classe) = new Objecto do tipo da Classe 		
 		
-		Metodos_comuns_Getters_etters aluno3 = new Metodos_comuns_Getters_etters();
+		Student aluno3 = new Student();
 		
-		Metodos_comuns_Getters_etters aluno4 = new Metodos_comuns_Getters_etters("Maria"); //Contrutor 
+		Student aluno4 = new Student("Maria"); //Contrutor 
 		
-		Metodos_comuns_Getters_etters aluno5 = new Metodos_comuns_Getters_etters("José", 50); //Contrutor
+		Student aluno5 = new Student("José", 50); //Contrutor
 		
 	}
 

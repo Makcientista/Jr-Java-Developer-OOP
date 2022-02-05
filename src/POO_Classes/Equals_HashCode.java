@@ -1,6 +1,7 @@
 package POO_Classes;
 
-public class Metodos_comuns_Getters_etters {
+public class Equals_HashCode {
+
 	/*
 	 * Esses são os atributo do Aluno | que representam caracteristicas do mundo
 	 * real
@@ -24,15 +25,15 @@ public class Metodos_comuns_Getters_etters {
 	private double nota3;
 	private double nota4;
 
-	public Metodos_comuns_Getters_etters() { /* Cria os dados na memoria - Sendo padrão do Java */
+	public Equals_HashCode() { /* Cria os dados na memoria - Sendo padrão do Java */
 
 	}
 
-	public Metodos_comuns_Getters_etters(String nomePadrao) { // Inicializar costrutir com um valor fixo
+	public Equals_HashCode(String nomePadrao) { // Inicializar costrutir com um valor fixo
 		nome = nomePadrao;
 	}
 
-	public Metodos_comuns_Getters_etters(String nomePadrao, int idadePadrao) { // Inicializar costrutir com valores fixo
+	public Equals_HashCode(String nomePadrao, int idadePadrao) { // Inicializar costrutir com valores fixo
 		nome = nomePadrao;
 		idade = idadePadrao;
 	}
@@ -46,8 +47,7 @@ public class Metodos_comuns_Getters_etters {
 	public void setNome(String nome) {
 		this.nome = nome; /*this.nome para acessar o atributo(nome) da classe 
 							"Metodos_comuns_Getters_etters" e = (recebendo o nome passado pelo parametro "String nome") */
-	}
-	
+	}	
 	public String getNome() {
 		return nome;
 	}
@@ -173,15 +173,51 @@ public class Metodos_comuns_Getters_etters {
 		}
 		
 	}
+	
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
 		if (media >= 70) {
-			return "Aluno estpa Aprovado";
+			return "Aluno está Aprovado";
 			
 		}else {
-			return "Aluno Reprovado";
+			return "Aluno está Reprovado";
 		}
 		
 	}
-}
 
+	@Override
+	public String toString() {
+		return "Metodos_comuns_Getters_etters [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento
+				+ ", registroGeral=" + registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae
+				+ ", nomePai=" + nomePai + ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola
+				+ ", serieMatriculado=" + serieMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3="
+				+ nota3 + ", nota4=" + nota4 + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Equals_HashCode other = (Equals_HashCode) obj;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		return true;
+	}
+	
+	
+}
