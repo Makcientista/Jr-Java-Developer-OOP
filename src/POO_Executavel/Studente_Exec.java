@@ -1,8 +1,7 @@
 package POO_Executavel;
 
 import javax.swing.JOptionPane;
-
-import POO_Classes.Declaração_tipos_publica_privada;
+import POO_Classes.Disciplina;
 import POO_Classes.Student;
 
 public class Studente_Exec {
@@ -23,20 +22,7 @@ public class Studente_Exec {
 		String serie = JOptionPane.showInputDialog("Qual é a serie do aluno? ");
 		String escola = JOptionPane.showInputDialog("Qual é a escola do aluno? ");
 		
-		String disciplina1 = JOptionPane.showInputDialog("Qual a Disciplina 1");
-		String nota1 = JOptionPane.showInputDialog("Qual é a nota1 do aluno? ");
-		
-		String disciplina2 = JOptionPane.showInputDialog("Qual a Disciplina 2");
-		String nota2 = JOptionPane.showInputDialog("Qual é a nota2 do aluno? ");
-		
-		String disciplina3 = JOptionPane.showInputDialog("Qual a Disciplina 3");		
-		String nota3 = JOptionPane.showInputDialog("Qual é a nota3 do aluno? ");
-		
-		String disciplina4 = JOptionPane.showInputDialog("Qual a Disciplina 4");
-		String nota4 = JOptionPane.showInputDialog("Qual é a nota4 do aluno? ");
-	
-		
-		
+				
 		Student aluno1 = new Student(); /*Aqui será o joão*/
 		/*Passar os dados*/
 		aluno1.setNome(nome);
@@ -48,8 +34,35 @@ public class Studente_Exec {
 		aluno1.setNomePai(pai);
 		aluno1.setDataMatricula(matricula);
 		aluno1.setSerieMatriculado(serie);
-		aluno1.setNomeEscola(escola);		
-				
+		aluno1.setNomeEscola(escola);
+		
+		Disciplina subject1 = new Disciplina();
+		subject1.setDisciplina("Banco de Dados");
+		subject1.setNota(90);
+		
+
+		
+		Disciplina subject2 = new Disciplina();
+		subject2.setDisciplina("Matematica");
+		subject2.setNota(80);
+		
+		
+
+		Disciplina subject3 = new Disciplina();
+		subject3.setDisciplina("Geografia");
+		subject3.setNota(80);
+		
+		
+		Disciplina subject4 = new Disciplina();
+		subject4.setDisciplina("Java Web");
+		subject4.setNota(80);
+		
+		
+		aluno1.getDisciplinas().add(subject1); //add subject1
+		aluno1.getDisciplinas().add(subject2); //add subject2
+		aluno1.getDisciplinas().add(subject3); //add subject3
+		aluno1.getDisciplinas().add(subject4); //add subject4	
+		
 		
 		/*Imprmir dados na console*/
 		System.out.println(aluno1);
@@ -74,17 +87,6 @@ public class Studente_Exec {
 		System.out.println("Resultado = " + (aluno1.getAlunoAprovado() ? "Aprovado" : "Reprovado"));
 		
 		
-		
-		
-		
-		/*Agora temos um objecto real na memoria*/
-		Student aluno2 = new Student(); //Classe variavel_de_instancia(que faz referencia ao objecto do tipo da Classe) = new Objecto do tipo da Classe 		
-		
-		Student aluno3 = new Student();
-		
-		Student aluno4 = new Student("Maria"); //Contrutor 
-		
-		Student aluno5 = new Student("José", 50); //Contrutor
 		
 	}
 

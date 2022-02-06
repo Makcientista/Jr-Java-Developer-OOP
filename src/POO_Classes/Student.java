@@ -21,11 +21,18 @@ public class Student {
 	private String nomePai;
 	private String dataMatricula;
 	private String nomeEscola;
-	private String serieMatriculado;
+	private String serieMatriculado;	
 	
 	
-	private List<Disciplina> disciplina = new ArrayList<Disciplina>();
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+	
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
 	
 	public Student() { /* Cria os dados na memoria - Sendo padrão do Java */
 
@@ -136,7 +143,13 @@ public class Student {
 	
 	/*Metodos que retorna a media do Aluno*/
 	public double getMediaNota() {
-		return 0;
+		
+		double somaNotas = 0.0;
+		
+		for (Disciplina disciplina : disciplinas) {
+			somaNotas += disciplina.getNota();
+		}
+		return somaNotas / disciplinas.size();
 	}
 	
 	//Métodos com retorna true para Aprovado e false para Reprovado
@@ -160,8 +173,7 @@ public class Student {
 			return "Aluno está Reprovado";
 		}
 		
-	}
-	
+	}	
 	
 
 	@Override
@@ -178,7 +190,7 @@ public class Student {
 		int result = 1;
 		result = prime * result + ((dataMatricula == null) ? 0 : dataMatricula.hashCode());
 		result = prime * result + ((dataNascimento == null) ? 0 : dataNascimento.hashCode());
-		result = prime * result + ((disciplina == null) ? 0 : disciplina.hashCode());
+		result = prime * result + ((disciplinas == null) ? 0 : disciplinas.hashCode());
 		result = prime * result + idade;
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((nomeEscola == null) ? 0 : nomeEscola.hashCode());
@@ -209,10 +221,10 @@ public class Student {
 				return false;
 		} else if (!dataNascimento.equals(other.dataNascimento))
 			return false;
-		if (disciplina == null) {
-			if (other.disciplina != null)
+		if (disciplinas == null) {
+			if (other.disciplinas != null)
 				return false;
-		} else if (!disciplina.equals(other.disciplina))
+		} else if (!disciplinas.equals(other.disciplinas))
 			return false;
 		if (idade != other.idade)
 			return false;
@@ -254,8 +266,13 @@ public class Student {
 		return true;
 	}
 
+	
 
+	
 	}
+
+
+	
 	
 	
 
