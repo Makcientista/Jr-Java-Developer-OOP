@@ -36,38 +36,27 @@ public class Studente_Exec {
 		aluno1.setSerieMatriculado(serie);
 		aluno1.setNomeEscola(escola);
 		
-		Disciplina subject1 = new Disciplina();
-		subject1.setDisciplina("Banco de Dados");
-		subject1.setNota(90);
-		
-
-		
-		Disciplina subject2 = new Disciplina();
-		subject2.setDisciplina("Matematica");
-		subject2.setNota(80);
-		
-		
-
-		Disciplina subject3 = new Disciplina();
-		subject3.setDisciplina("Geografia");
-		subject3.setNota(80);
-		
-		
-		Disciplina subject4 = new Disciplina();
-		subject4.setDisciplina("Java Web");
-		subject4.setNota(80);
-		
-		
-		aluno1.getDisciplinas().add(subject1); //add subject1
-		aluno1.getDisciplinas().add(subject2); //add subject2
-		aluno1.getDisciplinas().add(subject3); //add subject3
-		aluno1.getDisciplinas().add(subject4); //add subject4	
+	
+		for(int pos = 1; pos <= 4; pos++) {
+			String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina "+pos+" ?");
+			String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina "+pos+" ?");
+			
+			
+			Disciplina disciplina = new Disciplina();
+			disciplina.setDisciplina(nomeDisciplina);
+			disciplina.setNota(Double.valueOf(notaDisciplina));
+			
+			aluno1.getDisciplinas().add(disciplina);
+		}
+			
 		
 		
 		/*Imprmir dados na console*/
-		System.out.println(aluno1);
+		System.out.println(aluno1); /*Descrição do objeto na memoria*/
 		System.out.println("Média do aluno = " + aluno1.getMediaNota());
 		System.out.println("Resultado do aluno = " + aluno1.getAlunoAprovado2());
+		
+		
 		
 		System.out.println("\n /***************+++++++++++****************/++++++++++++********/ \n");
 		
