@@ -48,7 +48,14 @@ public class Studente_Exec {
 			
 			aluno1.getDisciplinas().add(disciplina);
 		}
+		
+		int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma diciplina");
+		
+		if (escolha == 0) {
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina 1, 2, 3, ou 4 ?");
 			
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue()); //valueOf retorna um inteiro
+		}
 		
 		
 		/*Imprmir dados na console*/
