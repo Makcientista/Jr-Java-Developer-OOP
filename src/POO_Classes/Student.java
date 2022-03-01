@@ -21,19 +21,18 @@ public class Student {
 	private String nomePai;
 	private String dataMatricula;
 	private String nomeEscola;
-	private String serieMatriculado;	
-	
-	
+	private String serieMatriculado;
+
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
-	
+
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
-	
+
 	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
-	
+
 	public Student() { /* Cria os dados na memoria - Sendo padrão do Java */
 
 	}
@@ -46,20 +45,20 @@ public class Student {
 		nome = nomePadrao;
 		idade = idadePadrao;
 	}
-	
-	/*Veremos o metodo SETTERS e GETTERS do objecto*/
-	/*SET é para adicionar ou receber dados para os atributos*/
-	/*Get para resgatar ou obter o valor do atributo*/
-	
-	
-	/*Recebe dados*/
-	
-	
-	
+
+	/* Veremos o metodo SETTERS e GETTERS do objecto */
+	/* SET é para adicionar ou receber dados para os atributos */
+	/* Get para resgatar ou obter o valor do atributo */
+
+	/* Recebe dados */
+
 	public void setNome(String nome) {
-		this.nome = nome; /*this.nome para acessar o atributo(nome) da classe 
-							"Metodos_comuns_Getters_etters" e = (recebendo o nome passado pelo parametro "String nome") */
-	
+		this.nome = nome; /*
+							 * this.nome para acessar o atributo(nome) da classe
+							 * "Metodos_comuns_Getters_etters" e = (recebendo o nome passado pelo parametro
+							 * "String nome")
+							 */
+
 	}
 
 	public String getNome() {
@@ -106,7 +105,7 @@ public class Student {
 		this.nomeMae = nomeMae;
 	}
 
-	//Recuperar os dados setados
+	// Recuperar os dados setados
 	public String getNomePai() {
 		return nomePai;
 	}
@@ -139,49 +138,49 @@ public class Student {
 		this.serieMatriculado = serieMatriculado;
 	}
 
-	
-	
-	/*Metodos que retorna a media do Aluno*/
+	/* Metodos que retorna a media do Aluno */
 	public double getMediaNota() {
-		
+
 		double somaNotas = 0.0;
-		
+
 		for (Disciplina disciplina : disciplinas) {
 			somaNotas += disciplina.getNota();
 		}
 		return somaNotas / disciplinas.size();
 	}
-	
-	//Métodos com retorna true para Aprovado e false para Reprovado
+
+	// Métodos com retorna true para Aprovado e false para Reprovado
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
-		if (media >= 70) {
+		if (media >= 70) { /* Aprovado */
 			return true;
-			
-		}else {
-			return false;
+
+		} else {
+			return false; /* Reprovado */
 		}
-		
+
 	}
-	
+
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
-		if (media >= 70) {
-			return "Aluno está Aprovado";
-			
-		}else {
+		if (media >= 50) {
+			if (media >= 70) {
+				return "Aluno está Aprovado";
+			} else {
+				return "Aluno em recuperação";
+			}
+		} else {
 			return "Aluno está Reprovado";
 		}
-		
-	}	
-	
+
+	}
 
 	@Override
 	public String toString() {
 		return "Student [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 				+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
-				+ serieMatriculado +  "]";
+				+ serieMatriculado + "]";
 	}
 
 	@Override
@@ -266,13 +265,4 @@ public class Student {
 		return true;
 	}
 
-	
-
-	
-	}
-
-
-	
-	
-	
-
+}
