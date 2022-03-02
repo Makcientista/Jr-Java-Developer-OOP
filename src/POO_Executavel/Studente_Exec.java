@@ -73,13 +73,17 @@ public class Studente_Exec {
 
 			students.add(aluno1);
 		}
+
 		for (Student student : students) {
 
-			/* Imprmir dados na console */
-			System.out.println(student); /* Descrição do objeto na memoria */
-			System.out.println("Média do aluno = " + student.getMediaNota());
-			System.out.println("Resultado do aluno = " + student.getAlunoAprovado2());
-			System.out.println("\n /***************+++++++++++****************/++++++++++++********/ \n");
+			if (student.getNome().equalsIgnoreCase("mak")) {
+				/* Imprmir dados na console */
+				System.out.println(student); /* Descrição do objeto na memoria */
+				System.out.println("Média do aluno = " + student.getMediaNota());
+				System.out.println("Resultado do aluno = " + student.getAlunoAprovado2());
+				System.out.println("\n /***************+++++++++++****************/++++++++++++********/ \n");
+				break;
+			}
 
 		}
 
