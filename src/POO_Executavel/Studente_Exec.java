@@ -1,6 +1,7 @@
 package POO_Executavel;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -18,7 +19,7 @@ public class Studente_Exec {
 		for (int qtd = 0; qtd <= 1; qtd++) {
 
 			/* Entrada na console */
-			String nome = JOptionPane.showInputDialog("Qual o nome do aluno? ");
+			String nome = JOptionPane.showInputDialog("Qual o nome do aluno "+qtd+" ? ");
 			String idade = JOptionPane.showInputDialog("Qual é a idade do aluno? ");
 			String dataNascimento = JOptionPane.showInputDialog("Qual é a data de nasciento do aluno? ");
 			String rg = JOptionPane.showInputDialog("Qual é o registro geral do aluno? ");
@@ -74,29 +75,20 @@ public class Studente_Exec {
 			students.add(aluno1);
 		}
 
-		for (Student student : students) {
-
-			if (student.getNome().equalsIgnoreCase("mak")) {
-				students.remove(student);
-				break;
-			} else {
-				/* Imprmir dados na console */
-				System.out.println(student); /* Descrição do objeto na memoria */
-				System.out.println("Média do aluno = " + student.getMediaNota());
-				System.out.println("Resultado do aluno = " + student.getAlunoAprovado2());
-				System.out.println("\n /***************+++++++++++****************/++++++++++++********/ \n");
-
+		for (int pos = 0; pos < students.size(); pos ++) { //per correr aluno
+			
+			Student student = students.get(pos);
+			
+			System.out.println("Aluno = " + student.getNome());
+			System.out.println("Madia do aluno = " + student.getMediaNota());
+			System.out.println("Resultado = " + student.getAlunoAprovado2());
+			System.out.println("---------------------------------------------------");
+			
+			for (int posd = 0; posd < student.getDisciplinas().size(); posd ++) { //per correr a as posições das disciplina deste aluno
+				Disciplina disc = student.getDisciplinas().get(posd);
+				System.out.println("Materia = " + disc.getDisciplina() + " Nota =" + disc.getNota());
 			}
 		}
-		for (Student student : students) {
-			System.out.println("Aluno que sobraram na lista");
-			System.out.println(student.getNome());
-			System.out.println("Suas materias são");
-			for(Disciplina disciplina : student.getDisciplinas()) {
-				System.out.println(disciplina.getDisciplina());
-			}
-		}
-
 	}
 
 }
