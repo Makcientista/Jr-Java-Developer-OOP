@@ -16,10 +16,10 @@ public class Studente_Exec {
 
 		List<Student> students = new ArrayList<Student>();
 
-		for (int qtd = 0; qtd <= 1; qtd++) {
+		for (int qtd = 1; qtd <= 2; qtd++) {
 
 			/* Entrada na console */
-			String nome = JOptionPane.showInputDialog("Qual o nome do aluno "+qtd+" ? ");
+			String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + " ? ");
 			String idade = JOptionPane.showInputDialog("Qual é a idade do aluno? ");
 			String dataNascimento = JOptionPane.showInputDialog("Qual é a data de nasciento do aluno? ");
 			String rg = JOptionPane.showInputDialog("Qual é o registro geral do aluno? ");
@@ -43,7 +43,7 @@ public class Studente_Exec {
 			aluno1.setSerieMatriculado(serie);
 			aluno1.setNomeEscola(escola);
 
-			for (int pos = 1; pos <= 4; pos++) {
+			for (int pos = 1; pos <= 1; pos++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina " + pos + " ?");
 				String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina " + pos + " ?");
 
@@ -75,16 +75,32 @@ public class Studente_Exec {
 			students.add(aluno1);
 		}
 
-		for (int pos = 0; pos < students.size(); pos ++) { //per correr aluno
-			
+		for (int pos = 0; pos < students.size(); pos++) { // per correr aluno
+
 			Student student = students.get(pos);
-			
+
+			if (student.getNome().equalsIgnoreCase("Makiesse")) {
+				Student trocar = new Student();
+				trocar.setNome("Aluno foi trocado");
+
+				Disciplina disciplina = new Disciplina();
+				disciplina.setDisciplina("Matemática");
+				disciplina.setNota(96);
+
+				trocar.getDisciplinas().add(disciplina);
+				
+				students.set(pos, trocar);
+				student = students.get(pos); //resgatar o aluno
+
+			}
+
 			System.out.println("Aluno = " + student.getNome());
 			System.out.println("Madia do aluno = " + student.getMediaNota());
 			System.out.println("Resultado = " + student.getAlunoAprovado2());
 			System.out.println("---------------------------------------------------");
-			
-			for (int posd = 0; posd < student.getDisciplinas().size(); posd ++) { //per correr a as posições das disciplina deste aluno
+
+			for (int posd = 0; posd < student.getDisciplinas().size(); posd++) { // per correr a as posições das
+																					// disciplina deste aluno
 				Disciplina disc = student.getDisciplinas().get(posd);
 				System.out.println("Materia = " + disc.getDisciplina() + " Nota =" + disc.getNota());
 			}
