@@ -77,14 +77,24 @@ public class Studente_Exec {
 		for (Student student : students) {
 
 			if (student.getNome().equalsIgnoreCase("mak")) {
+				students.remove(student);
+				break;
+			} else {
 				/* Imprmir dados na console */
 				System.out.println(student); /* Descrição do objeto na memoria */
 				System.out.println("Média do aluno = " + student.getMediaNota());
 				System.out.println("Resultado do aluno = " + student.getAlunoAprovado2());
 				System.out.println("\n /***************+++++++++++****************/++++++++++++********/ \n");
-				break;
-			}
 
+			}
+		}
+		for (Student student : students) {
+			System.out.println("Aluno que sobraram na lista");
+			System.out.println(student.getNome());
+			System.out.println("Suas materias são");
+			for(Disciplina disciplina : student.getDisciplinas()) {
+				System.out.println(disciplina.getDisciplina());
+			}
 		}
 
 	}
