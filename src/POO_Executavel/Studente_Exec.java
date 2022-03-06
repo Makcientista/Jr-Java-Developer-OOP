@@ -16,6 +16,11 @@ public class Studente_Exec {
 		/* Instancia ou criação de objecto */
 		/* aluo1 é referência para o objeto Aluno */
 		
+		String login = JOptionPane.showInputDialog("Informe o login");
+		String senha = JOptionPane.showInputDialog("Informe a senha");
+		
+		if (login.equalsIgnoreCase("admin")&& 
+				senha.equalsIgnoreCase("admin")) {
 		
 
 		List<Student> students = new ArrayList<Student>();
@@ -115,6 +120,8 @@ public class Studente_Exec {
 			System.out.println("Resultado = " + student.getAlunoAprovado2() + " com média de = " + student.getMediaNota());
 		}
 	  
+	}
+		
 	}
 
 }
