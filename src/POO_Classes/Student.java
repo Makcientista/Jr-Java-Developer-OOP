@@ -3,6 +3,8 @@ package POO_Classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import POO_Classes.constantes.StudentStatus;
+
 public class Student {
 	/*
 	 * Esses são os atributo do Aluno | que representam caracteristicas do mundo
@@ -165,12 +167,12 @@ public class Student {
 		double media = this.getMediaNota();
 		if (media >= 50) {
 			if (media >= 70) {
-				return "Aluno está Aprovado";
+				return StudentStatus.APROVADO;
 			} else {
-				return "Aluno em recuperação";
+				return StudentStatus.RECUPERACAO;
 			}
 		} else {
-			return "Aluno está Reprovado";
+			return StudentStatus.REPROVADO;
 		}
 
 	}
