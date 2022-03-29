@@ -5,7 +5,7 @@ import java.util.List;
 
 import POO_Classes.constantes.StudentStatus;
 
-public class Student {
+public class Student extends Pessoa {
 	/*
 	 * Esses são os atributo do Aluno | que representam caracteristicas do mundo
 	 * real
@@ -14,17 +14,10 @@ public class Student {
 	 * private -> Para manter o controle da variavel e evita que o programador hamar
 	 * uma variavel de forma errada e alterar o valor dela e causar erro no sistema
 	 */
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
-	private String nomePai;
+
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
-
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
 	public void setDisciplinas(List<Disciplina> disciplinas) {
