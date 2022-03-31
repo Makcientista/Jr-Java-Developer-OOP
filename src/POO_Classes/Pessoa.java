@@ -1,5 +1,6 @@
 package POO_Classes;
 
+/*Classe pai ou classe master ou superclasse - (Atrbutos comuns a todos os objetos filhos)*/
 public class Pessoa {
 
 	protected String nome;
