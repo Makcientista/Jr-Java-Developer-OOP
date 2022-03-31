@@ -1,6 +1,6 @@
 package POO_Classes;
 
-/*Classe pai ou classe master ou superclasse - (Atrbutos comuns a todos os objetos filhos)*/
+/* Herança - Classe pai ou classe master ou superclasse - (Atrbutos comuns a todos os objetos filhos)*/
 public class Pessoa {
 
 	protected String nome;
@@ -54,6 +54,9 @@ public class Pessoa {
 		this.nomePai = nomePai;
 	}
 	
-	
+	/*Retorna true caso seja18 anos para cima senão false*/
+	public boolean pessoaMaiorIdade() {
+		return idade >=18;
+	}
 	
 }
