@@ -1,6 +1,7 @@
 package POO_Executavel;
 
 import POO_Classes.Diretor;
+import POO_Classes.Pessoa;
 import POO_Classes.Secretario;
 import POO_Classes.Student;
 
@@ -14,12 +15,14 @@ public class TestandoClassesFilhas {
 		
 		Diretor diretor = new Diretor();
 		diretor.setRegistroGeral("1234567");
+		diretor.setNome("Kiassungua");		
 		diretor.setIdade(50);
 		
 		
 		Secretario secretario = new Secretario();
 		secretario.setExperirncia("Gestão de Negocio");
 		secretario.setNumeroCpf("258564987-80");
+		secretario.setNome("António");
 		secretario.setIdade(18);
 		
 		System.out.println(student);
@@ -35,6 +38,16 @@ public class TestandoClassesFilhas {
 		System.out.println("Salario do secretario é = " + secretario.salario());
 		
 		
+           teste(student);
+           teste(diretor);
+           teste(secretario);
 	}
+	
+	public static void teste(Pessoa pessoa) {
+		
+		System.out.println("Essa pessoa é demais = " + pessoa.getNome() + " é o salario é de = " + pessoa.salario());
+	}
+	
+	
 
 }
