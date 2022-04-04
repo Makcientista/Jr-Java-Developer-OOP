@@ -1,10 +1,26 @@
 package POO_Classes;
 
-public class Secretario extends Pessoa {
+import cursojava.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso {
 
 	 private String registro;
 	 private String nivelCargo;
 	 private String experirncia;
+	 
+	 private String login;
+	 private String senha;
+	 
+	 public Secretario(String login,String senha) {
+		 this.login = login; // this para endicar que é o login da class
+		 this.senha = senha;
+	
+	 }
+	 
+	 public Secretario() {
+		   
+	   }
+	 
 	public String getRegistro() {
 		return registro;
 	}
@@ -34,6 +50,21 @@ public class Secretario extends Pessoa {
 		// TODO Auto-generated method stub
 		return 1800.80 * 0.90;
 	}
+	
+	
+	
+	@Override
+	public boolean autenticar(String login, String senha) {
+		this.login = login;
+		this.senha = senha;
+		return autenticar();
+	}
+	@Override
+	public boolean autenticar() {
+		return login.equals("admin") && senha.equals("admin");
+	}
+	
+	
 	 
 	
 	
