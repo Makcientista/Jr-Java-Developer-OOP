@@ -7,8 +7,10 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 import POO_Classes.Disciplina;
+import POO_Classes.Diretor;
 import POO_Classes.Secretario;
 import POO_Classes.Student;
+import POO_Classes.classesauxiliares.FuncaoaAutenticacao;
 import POO_Classes.constantes.StudentStatus;
 import cursojava.interfaces.PermitirAcesso;
 
@@ -20,15 +22,11 @@ public class Studente_Exec {
 		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
-		
-		PermitirAcesso permitirAcesso = new Secretario(login, senha);
-		
-	
-		
-		
-		if (permitirAcesso.autenticar(login, senha)) { /*se TRUE acessa se FALSE não acessa*/
-		
 
+		
+										/*Vou travar o contato para autrizar somente quem realmente tem o controle 100% legitimo*/
+		if (new FuncaoaAutenticacao(new Diretor(login, senha)).autenticar()) { /*se TRUE acessa se FALSE não acessa*/		
+										
 		List<Student> students = new ArrayList<Student>();
 		/* É uma Lista que dentro dela trmos uma chavae que identifica uma sequência de valores também*/
 	    HashMap<String, List<Student>> maps = new HashMap<String, List <Student>>();

@@ -54,7 +54,7 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	
 	
 	@Override
-	public boolean autenticar(String login, String senha) {
+	public boolean autenticar(String login, String senha) { 
 		this.login = login;
 		this.senha = senha;
 		return autenticar();
