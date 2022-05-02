@@ -1,24 +1,33 @@
 package POO_Executavel;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
-import POO_Classes.Disciplina;
+
 import POO_Classes.Diretor;
-import POO_Classes.Secretario;
+import POO_Classes.Disciplina;
 import POO_Classes.Student;
 import POO_Classes.classesauxiliares.FuncaoaAutenticacao;
 import POO_Classes.constantes.StudentStatus;
-import cursojava.interfaces.PermitirAcesso;
 
 public class Studente_Exec {
 
+	
+
 	public static void main(String[] args) {
+		
 		/* Instancia ou criação de objecto */
 		/* aluo1 é referência para o objeto Aluno */
+		
+		
+		try {
+			 
+			File fil = new File("arquivo.txt");
+			Scanner scanner = new Scanner(fil);
 		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -32,11 +41,12 @@ public class Studente_Exec {
 	    HashMap<String, List<Student>> maps = new HashMap<String, List <Student>>();
 	    
 
-		for (int qtd = 1; qtd <= 5; qtd++) {
+		for (int qtd = 1; qtd <= 2; qtd++) {
 
 			/* Entrada na console */
 			String nome = JOptionPane.showInputDialog("Qual o nome do aluno " + qtd + " ? ");
 			String idade = JOptionPane.showInputDialog("Qual é a idade do aluno? ");
+			/*
 			String dataNascimento = JOptionPane.showInputDialog("Qual é a data de nasciento do aluno? ");
 			String rg = JOptionPane.showInputDialog("Qual é o registro geral do aluno? ");
 			String cpf = JOptionPane.showInputDialog("Qual é o CPF do aluno? ");
@@ -44,20 +54,21 @@ public class Studente_Exec {
 			String pai = JOptionPane.showInputDialog("Qual é o nome do pai do aluno? ");
 			String matricula = JOptionPane.showInputDialog("Qual é a data da matricula do aluno? ");
 			String serie = JOptionPane.showInputDialog("Qual é a serie do aluno? ");
-			String escola = JOptionPane.showInputDialog("Qual é a escola do aluno? ");
+			String escola = JOptionPane.showInputDialog("Qual é a escola do aluno? "); */
 
 			Student aluno1 = new Student(); /* Aqui será o joão */
 			/* Passar os dados */
 			aluno1.setNome(nome);
 			aluno1.setIdade(Integer.valueOf(idade)); // converter String para int
-			aluno1.setDataNascimento(dataNascimento);
+		/*	
+		    aluno1.setDataNascimento(dataNascimento);
 			aluno1.setRegistroGeral(rg);
 			aluno1.setNumeroCpf(cpf);
 			aluno1.setNomeMae(mae);
 			aluno1.setNomePai(pai);
 			aluno1.setDataMatricula(matricula);
 			aluno1.setSerieMatriculado(serie);
-			aluno1.setNomeEscola(escola);
+			aluno1.setNomeEscola(escola); */
 
 			for (int pos = 1; pos <= 1; pos++) {
 				String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina " + pos + " ?");
@@ -127,6 +138,36 @@ public class Studente_Exec {
 	}
 		else {
 			JOptionPane.showConfirmDialog(null, "Acesso não permitido");
+		}
+		
+		/*Aqui*/
+		
+		} catch (NumberFormatException e) {
+			
+			StringBuilder saida = new StringBuilder();
+			
+			
+			/*Mensagem do erro causa*/
+			e.printStackTrace(); /*Imprimir erro no console Java*/
+			//JOptionPane.showInternalMessageDialog(null, "Erro ao processar notas");
+			
+			/*Mensagem do Erro*/
+			for (int pos = 0; pos < e.getStackTrace().length; pos++) {
+				
+				saida.append("\n Classe de error : " +e.getStackTrace()[pos].getClassName());
+				saida.append("\n Método de  error : " +e.getStackTrace()[pos].getMethodName());
+				saida.append("\n Linha de error : " +e.getStackTrace()[pos].getLineNumber());
+				saida.append("\n Class  : " +e.getClass().getName());
+			}
+			
+			JOptionPane.showMessageDialog(null, "Erro de conversão de número " + saida.toString());
+			
+			
+		}	catch (NullPointerException e) {
+			JOptionPane.showMessageDialog(null, "Opaa um null pointer exception : " + e.getClass());
+		}	catch (Exception e) { /* Captura todas as exceções que não prevemos*/
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Erro inesperado : " + e.getClass().getName());
 		}
 		
 	}

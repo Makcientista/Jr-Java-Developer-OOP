@@ -12,7 +12,7 @@ public class Declaração_tipos_publica_privada_Executavel {
 				aluno1.nome = "João";
 				aluno1.idade = 50;
 				
-				System.out.println("Nome do aluni 1 é: " + aluno1.nome);
+				System.out.println("Nome do aluno 1 é: " + aluno1.nome);
 				System.out.println("Idade é: " + aluno1.idade);
 				
 				
