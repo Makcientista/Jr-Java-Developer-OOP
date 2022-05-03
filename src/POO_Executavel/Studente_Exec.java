@@ -1,6 +1,7 @@
 package POO_Executavel;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,6 +14,7 @@ import POO_Classes.Disciplina;
 import POO_Classes.Student;
 import POO_Classes.classesauxiliares.FuncaoaAutenticacao;
 import POO_Classes.constantes.StudentStatus;
+import curso.java.excecao.ExcecaoProcessarNota;
 
 public class Studente_Exec {
 
@@ -25,10 +27,9 @@ public class Studente_Exec {
 		
 		
 		try {
-			 
-			File fil = new File("arquivo.txt");
-			Scanner scanner = new Scanner(fil);
-		
+			
+	              lerArquivo();	
+			
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
 
@@ -168,8 +169,24 @@ public class Studente_Exec {
 		}	catch (Exception e) { /* Captura todas as exceções que não prevemos*/
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(null, "Erro inesperado : " + e.getClass().getName());
+		}finally { /*Sempre é executado ocorrendo erros ou não*/
+			/*Finally sempre é usado quando precisa executar um processo acntece erro ou não no sistema*/
+			JOptionPane.showMessageDialog(null, "Obrigado por aprender Java comigo" );
 		}
 		
 	}
-
+	
+	public static void lerArquivo () throws ExcecaoProcessarNota {
+		try {
+		File fil = new File("c://arquivo.txt");
+		Scanner scanner = new Scanner(fil);
+		}catch (FileNotFoundException e) {
+			throw new ExcecaoProcessarNota(e.getMessage());
+		}
+	}
 }
+
+
+
+
+
