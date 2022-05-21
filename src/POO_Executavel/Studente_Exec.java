@@ -143,7 +143,7 @@ public class Studente_Exec {
 		
 		/*Aqui*/
 		
-		} catch (NumberFormatException e) {
+		} catch (NumberFormatException e) { // (Exception)
 			
 			StringBuilder saida = new StringBuilder();
 			
@@ -165,10 +165,10 @@ public class Studente_Exec {
 			
 			
 		}	catch (NullPointerException e) {
-			JOptionPane.showMessageDialog(null, "Opaa um null pointer exception : " + e.getClass());
-		}	catch (Exception e) { /* Captura todas as exceções que não prevemos*/
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Erro inesperado : " + e.getClass().getName());
+			JOptionPane.showMessageDialog(null, "Opaa um null pointer exception : " + e.getClass()); 	//zerar
+		}	catch (FileNotFoundException e) { /* Captura todas as exceções que não prevemos*/  			 //zerar
+			e.printStackTrace();																		//zerar
+			JOptionPane.showMessageDialog(null, "Erro inesperado : " + e.getClass().getName());			//zerar
 		}finally { /*Sempre é executado ocorrendo erros ou não*/
 			/*Finally sempre é usado quando precisa executar um processo acntece erro ou não no sistema*/
 			JOptionPane.showMessageDialog(null, "Obrigado por aprender Java comigo" );
@@ -176,12 +176,12 @@ public class Studente_Exec {
 		
 	}
 	
-	public static void lerArquivo () throws ExcecaoProcessarNota {
+	public static void lerArquivo () throws FileNotFoundException { //throws declaração do metodo para retornar para classe pai
 		try {
 		File fil = new File("c://arquivo.txt");
 		Scanner scanner = new Scanner(fil);
 		}catch (FileNotFoundException e) {
-			throw new ExcecaoProcessarNota(e.getMessage());
+			throw new FileNotFoundException(e.getMessage()); //para lançar uma exceção
 		}
 	}
 }
