@@ -30,29 +30,46 @@ public class ArrayVetor {
 		disciplina2.setNota(notasEngSW);
 
 		student.getDisciplinas().add(disciplina2);
+				
+		
+		
+		/* Criação do Student */
+		Student student2 = new Student();
+		student2.setNome("Makiesse Kiassungua 2");
+		student2.setNomeEscola("Java Developher");
 
-		System.out.println("Nome do aluno = " + student.getNome() + "inscrito no curso: " + student.getNomeEscola());
-		System.out.println("--------------Disciplina do Aluno--------------");
-		for (Disciplina d : student.getDisciplinas()) {
+		/* Criação da disciplina */
+		Disciplina disciplina3 = new Disciplina();
+		disciplina3.setDisciplina("Estrutura de Dados em Java ");
+		disciplina3.setNota(notas);
 
-			System.out.println("Disciplina : " + d.getDisciplina());
-			System.out.println("A notas da disciplina são: ");
+		student2.getDisciplinas().add(disciplina3);
 
-			double notaMax = 0.0;
-			for (int pos = 0; pos < d.getNota().length; pos++) {
-				System.out.println("Nota " + pos + " é igual " + d.getNota()[pos]);
+		Disciplina disciplina4 = new Disciplina();
+		disciplina4.setDisciplina("Engenharia de Software ");
+		disciplina4.setNota(notasEngSW);
 
-				if (pos == 0) {
-					notaMax = d.getNota()[pos];
+		student2.getDisciplinas().add(disciplina4);
+		
 
-				} else {
-					if (d.getNota()[pos] > notaMax) {
-						notaMax = d.getNota()[pos];
-
-					}
+		//-----------------------------------------------
+		
+		Student[] arrayStudent = new Student[2];
+		
+		arrayStudent[0] = student;
+		arrayStudent[1] = student2;
+		
+		for(int pos = 0; pos < arrayStudent.length; pos ++) {
+			System.out.println("Nome do aluno é: " + arrayStudent[pos].getNome());
+			
+			for (Disciplina d : arrayStudent[pos].getDisciplinas()) {
+				System.out.println("Nome da disciplina é: " + d.getDisciplina());
+				
+				for (int posnota = 0; posnota < d.getNota().length; posnota++) {
+					System.out.println("A nota número:  " + posnota +  " é igual = " + d.getNota()[posnota]);
+					
 				}
 			}
-			System.out.println("A maior nota da Disciplina = " + d.getDisciplina() + " e de valor : " + notaMax);
 		}
 
 	}
