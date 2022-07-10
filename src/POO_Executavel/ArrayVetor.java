@@ -62,7 +62,7 @@ public class ArrayVetor {
 		for(int pos = 0; pos < arrayStudent.length; pos ++) {
 			System.out.println("Nome do aluno é: " + arrayStudent[pos].getNome());
 			
-			for (Disciplina d : arrayStudent[pos].getDisciplinas()) {
+			for (Disciplina d : arrayStudent[pos].getDisciplinas()) { //Para cada "Disciplina d" dentro de "arrayStudent[pos].getDisciplinas()" faça o seguinte...
 				System.out.println("Nome da disciplina é: " + d.getDisciplina());
 				
 				for (int posnota = 0; posnota < d.getNota().length; posnota++) {
